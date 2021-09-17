@@ -1,0 +1,46 @@
+.centerPosition {
+    display: flex;
+    justify-content: center;
+
+    .slideContainer {
+        position: relative;
+        height: 50vh;
+        width: 45vw;
+        overflow: hidden;
+    }
+
+    .slideList {
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+        width: 150vw;
+        transition: all 0.8s ease-in-out;
+        
+        img {
+            height: 100%;
+            width: 45vw;
+        } 
+    }
+
+    .slideButtonList {
+        position: absolute;
+        bottom : 5%;
+        left : 45%;
+        width: 10vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        button {
+            cursor: pointer;
+            padding: 0.1rem 0.7rem;
+            opacity: 0.5;
+            border-style: none;
+            z-index: 999;
+        }
+
+        button.active {
+            opacity: 1;
+        }
+    }
+}
