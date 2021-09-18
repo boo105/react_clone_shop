@@ -1,0 +1,25 @@
+.InfinityContainer {
+    height: 40vh;
+    width: 45vw;
+    padding: 5vh 0;
+    overflow: hidden;
+
+    .shoesList{
+        display: flex;
+        flex-direction: row;
+        width: 200vw;
+        transition: 0s;
+
+        .InfinitySlideElementContainer
+        {
+            display: flex;
+            flex-direction: column;
+            width: 11.3vw;
+
+            img {
+                height: 50%;
+                width: 100%;
+            }
+        }
+    }
+}

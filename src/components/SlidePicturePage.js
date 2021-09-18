@@ -2,13 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import image1 from "../asset/images/블라우스.png";
 import image2 from "../asset/images/블라우스2.png";
 import image3 from "../asset/images/블라우스3.png";
-
-
-<ul className = "slideList">
-<li> <img src={image1}/> </li>
-<li> <img src={image2}/> </li>
-<li> <img src={image3}/> </li>
-</ul>
+import InfinitySlidePicturePage from "./InfinitySlidePicturePage";
 
 const SildePicturePage = () => {
     const [imageIndex,setImageIndex] = useState(0);
@@ -20,7 +14,7 @@ const SildePicturePage = () => {
     }, [imageIndex]);
 
     return(
-        <div className = "inside_container centerPosition">
+        <div className = "inline_container centerPosition">
             <div className ="slideContainer">
                 <div ref={slideListRef} className = "slideList">
                     <div className = "inner"> <img src={image1}/> </div>
@@ -34,11 +28,10 @@ const SildePicturePage = () => {
                     <button className = {imageIndex === 2 ? "active" : ""} onClick={() => setImageIndex(2)}/>
                 </div>
             </div>
+
+            <InfinitySlidePicturePage/>
         </div>
     )
-
-    
 }
-
 
 export default SildePicturePage;
