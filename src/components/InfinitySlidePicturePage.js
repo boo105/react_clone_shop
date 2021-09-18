@@ -8,6 +8,7 @@ import shoes4 from "../asset/images/조던4.png";
 import shoes5 from "../asset/images/조던5.png";
 import shoes6 from "../asset/images/조던6.png";
 
+import TestShoes from "../asset/images/사카이.png";
 
 const InfinitySlidePicturePage = () => {
     // 배열 map 기능을 활용하려고 배열로 선언해줌
@@ -74,6 +75,7 @@ const InfinitySlidePicturePage = () => {
                 {shoes.map((item,index) => (
                     <div className = "InfinitySlideElementContainer">
                         <img src = {item}></img>
+                        <img src = {TestShoes} className="upper-image"></img>
                         <span className="shoesName">조던{index + 1}</span>
                         <span>20,000</span>
                     </div>

@@ -12,13 +12,30 @@
 
         .InfinitySlideElementContainer
         {
+            position: relative;
             display: flex;
             flex-direction: column;
             width: 11.3vw;
-
+            
             img {
                 height: 50%;
                 width: 100%;
+                transition: opacity 500ms ease;
+                cursor: pointer;                
+
+                &:hover {
+                    opacity : 0;
+                }
+            }
+
+            img.upper-image {
+                position: absolute;
+                opacity : 0;
+                transition: opacity 500ms ease;
+
+                &:hover {
+                    opacity: 1;
+                }
             }
         }
     }
