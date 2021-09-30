@@ -1,5 +1,5 @@
 .InfinityContainer {
-    height: 40vh;
+    height: 20vh;
     width: 45vw;
     padding: 5vh 0;
     overflow: hidden;
@@ -9,34 +9,33 @@
         flex-direction: row;
         width: 200vw;
         transition: 0s;
+    }
+}
 
-        .InfinitySlideElementContainer
-        {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            width: 11.3vw;
-            
-            img {
-                height: 50%;
-                width: 100%;
-                transition: opacity 500ms ease;
-                cursor: pointer;                
+.InfinitySlideElementContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 11.3vw;
+    
+    img {
+        height: 50%;
+        width: 100%;
+        transition: opacity 500ms ease;
+        cursor: pointer;                
 
-                &:hover {
-                    opacity : 0;
-                }
-            }
+        &:hover {
+            opacity : 0;
+        }
+    }
 
-            img.upper-image {
-                position: absolute;
-                opacity : 0;
-                transition: opacity 500ms ease;
-
-                &:hover {
-                    opacity: 1;
-                }
-            }
+    img.upper-image {
+        position: absolute;
+        opacity : 0;
+        transition: opacity 500ms ease;
+        height: 80%;
+        &:hover {
+            opacity: 1;
         }
     }
 }
