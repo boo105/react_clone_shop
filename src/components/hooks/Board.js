@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 import search_icon from "../../asset/icons/search_icon.ico";
 import lock_icon from "../../asset/icons/lock.png";
+
+import arrow_l from "../../asset/images/l.png";
+import arrow_r from "../../asset/images/r.png";
 
 const posts = [
     {
@@ -27,6 +30,18 @@ const posts = [
 ]
 
 export default function Board() {
+    const [page,setPage] = useState(1);
+
+    function PrePagingnation() {
+        if(page > 1)
+            setPage(page - 1)
+    }
+
+    function NextPagingnation() {
+        if(page < 5)
+            setPage(page + 1)
+    }
+
     return (
         <div className="boardContainer">
             <BOARD>
@@ -52,10 +67,21 @@ export default function Board() {
                         <img src={search_icon}/>
                     </a>
                 </form>
-
+                <a className="btn" href="/" >글쓰기</a>
             </BOARD_FOOTER>
+            <PAGING>
+                <ul className="pagingnation">
+                    <li><a  onClick = {() =>PrePagingnation()} ><img src={arrow_l}/></a></li>
+                    <li className={page === 1 ? "active" : ""}><a onClick={() => setPage(1)}>1</a></li>
+                    <li className={page === 2 ? "active" : ""}><a onClick={() => setPage(2)}>2</a></li>
+                    <li className={page === 3 ? "active" : ""}><a onClick={() => setPage(3)}>3</a></li>
+                    <li className={page === 4 ? "active" : ""}><a onClick={() => setPage(4)}>4</a></li>
+                    <li className={page === 5 ? "active" : ""}><a onClick={() => setPage(5)}>5</a></li>
+                    <li><a onClick = {() =>NextPagingnation()} ><img src={arrow_r}/></a></li>
+                </ul>
+            </PAGING>
         </div>
-        
+
     )
 }
 
@@ -131,12 +157,26 @@ const BODY = styled.ul`
 const BOARD_FOOTER = styled.div`
     margin : 2% 0 0 0;
     text-align : center;
+    display : flex;
+    flex-direction : row;
+    position : relative;
 
     form.input-group {
         display : table;
         position : relative;
         left : 40%;
         min-width : 220px;
+
+        a{
+            position : absolute;
+            line-height : 230%;
+            top : 0;
+            right : 8%;
+    
+            img {
+                width : 16px;
+            }
+        }
     }
 
     input {
@@ -147,14 +187,54 @@ const BOARD_FOOTER = styled.div`
         border : 1px solid #ccc;
     }
 
-    a{
+    a.btn {
         position : absolute;
-        line-height : 230%;
-        top : 0;
-        right : 8%;
+        right : 0;
 
-        img {
-            width : 16px;
+        background-color : #363636;
+        border-color : #363636;
+        color : #ffffff;
+        border-width : 1px;
+        border-radius : 3px;
+        padding : 1% 2%;
+
+        font-size : 0.8rem;
+        
+        text-decoration : none;
+    }  
+`;
+
+const PAGING = styled.nav`
+    text-align : center;
+
+    margin : 3% 0;
+
+    ul.pagingnation {
+        display : inline;
+        list-style : disc;
+
+        li {
+            display : inline-block;
+            float : none;
+            margin : 0 1%;
+
+            a {
+                display : inline-block;
+                text-decoration : none;
+                color : rgba(54,54,54,0.4);
+                cursor : pointer;
+                width : 2vw;
+                img {
+                    width : 13px;
+                }
+            }
+        }
+
+        li.active {
+            a{
+                color : #363636;
+            }
         }
     }
+
 `;
