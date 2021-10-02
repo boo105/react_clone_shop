@@ -22,7 +22,7 @@ const NavBar = () => {
                 </div>
             </div>
             <div className="selectionContainer inline_container">
-                <img id="logo" src="https://cdn.imweb.me/thumbnail/20201014/1f6a0149de065.png"></img>
+                <a href="/"><img id="logo" src="https://cdn.imweb.me/thumbnail/20201014/1f6a0149de065.png"></img></a>
                 <ul>
                     <li onMouseOver={() => setCategoryActive(true)} onMouseLeave={() => setCategoryActive(false)}>CATEGOTY</li>
                     <li onMouseOver={() => setCustomActive(true)} onMouseLeave={() => setCustomActive(false)}>RE-MAKE · CUSTOM</li>
